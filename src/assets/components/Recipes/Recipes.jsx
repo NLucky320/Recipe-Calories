@@ -2,8 +2,8 @@ import React from 'react';
 import { IoMdTime } from "react-icons/io";
 import { AiOutlineFire } from "react-icons/ai";
 
-const Recipes = ({ recipe }) => {
-    console.log(recipe)
+const Recipes = ({ recipe, handleCart, handleCook }) => {
+    // console.log(recipe)
     return (   
                 <div className='h-full lg:w-[300px] xl:w-[350px]'>
                     
@@ -31,7 +31,7 @@ const Recipes = ({ recipe }) => {
                                         <p>{recipe.calories} </p>
                                     </div>
                                 </div>
-                               <button className="btn bg-[#0BE58A] btn-primary text-[#150B2B] rounded-[50px] px-6 w-[170px]" >Want to Cook</button>
+                               <button className="btn bg-[#0BE58A] btn-primary text-[#150B2B] rounded-[50px] px-6 w-[170px]" onClick={()=>{handleCart(recipe)}}>Want to Cook</button>
                             </div>
                         </div>
                     </div>      
