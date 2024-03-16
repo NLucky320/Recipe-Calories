@@ -66,7 +66,7 @@ useEffect(() => {
            <h2 className='text-[40px] font-semibold text-[#150B2B]'>Our Recipes</h2>
             <p className='text-[#150B2B99] lg:w-[823px] mx-auto leading-6'>Whether you are planning a simple weeknight meal or preparing for a special occasion, a trip to the grocery store is always an adventure filled with endless possibilities for culinary creations.</p>
           <div className="   flex flex-col lg:flex-row justify-between pt-6 gap-4">
-            <div className="lg:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                {
             recipes.map(recipe => <Recipes key={recipe.id} recipe={recipe} handleCart={handleCart}></Recipes>)
             
@@ -77,74 +77,70 @@ useEffect(() => {
      
      
     </div>
-            <div className="lg:w-2/5">
+            <div className="lg:w-1/2">
                <div className="py-4 card bg-[#FFF] shadow-xl border border-solid border-[#28282833C]">
                 <h2 className='text-[24px] font-semibold text-[#282828] border-b-2 border-[#28282826]'>Want to cook: {cart.length}</h2>
-                                    <div className='flex justify-between gap-4 px-2'>
-                            <div>
-                                
-                            </div>
-                            <div>
-                                <p>Name</p>
-                            </div>
-                            <div>
-                                <p>Time</p>
-                            </div>
-                            <div>
-                                <p>Calories</p>
-                            </div>
-                            <div>
 
-                            </div>
-                        </div>
-                        <div className=''>
-                             {
-                  cart.map((item,index) => (
-                    <div key={index} className='flex justify-between gap-2 space-y-2 bg-[#28282808] p-2 items-center text-center'>
-                      <p>{index+1}</p>
-                      <p>{item.recipe_name} </p>
-                      <p>{item.preparing_time}</p>
-                      <p>{item.calories}</p>
-                      
-                      <button className="btn bg-[#0BE58A] text-[#150B2B] rounded-[50px] " onClick={() => { handleDelete(item.recipe_id); handleCook(item) }}>Preparing</button>
-                    </div>
-                  ))}
-                            
-                        </div>
-                         <h2 className='text-[24px] font-semibold text-[#282828] border-b-2 border-[#28282826]'> Currently cooking: {cookingItems.length}</h2>
-                        <div className='flex justify-between border border-black px-2'>
-                            <div>
-                                
-                            </div>
-                            <div>
-                                <p>Name</p>
-                            </div>
-                            <div>
-                                <p>Time</p>
-                            </div>
-                            <div>
-                                <p>Calories</p>
-                            </div>
-                           
-                        </div>
-                         <div className=''>
-                  {cookingItems.map((item, index) => (
-                    <div key={index} className='flex justify-between gap-1 bg-[#28282808] p-4'>
-                      <div>
-                        <p>{index + 1}</p>
-                      </div>
-                      <div>
-                        <p>{item.recipe_name}</p>
-                      </div>
-                      <div>
-                        <p>{item.preparing_time.slice(0,2)}</p>
-                      </div>
-                      <div>
-                        <p>{item.calories.slice(0,3)}</p>
-                      </div>
-                    </div>
-                  ))}
+
+<div className="overflow-hidden">
+  <table className="table">
+    {/* head */}
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Time</th>
+                        <th>Calories</th>
+                         <th></th>
+      </tr>
+    </thead>
+  
+                      {/* row 1 */}
+                       {cart.map((item,index) => (
+                    <tbody key={index} className="">
+                      <tr className="">
+        <th>{index+1}</th>
+        <td>{item.recipe_name} </td>
+        <td>{item.preparing_time}</td>
+        <td>{item.calories}</td>
+        <td>  <button className="btn bg-[#0BE58A] text-[#150B2B] rounded-[50px] " onClick={() => { handleDelete(item.recipe_id); handleCook(item) }}>Preparing</button></td>
+      </tr>
+      
+    </tbody>))}
+  </table>
                 </div>
+                <div>
+                  
+                         <h2 className='text-[24px] font-semibold text-[#282828] border-b-2 border-[#28282826]'> Currently cooking: {cookingItems.length}</h2>
+</div>
+                <div className="overflow-hidden">
+  <table className="table">
+    {/* head */}
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Time</th>
+                        <th>Calories</th>
+                         
+      </tr>
+    </thead>
+  
+                      {/* row 1 */}
+                       {cookingItems.map((item,index) => (
+                    <tbody key={index} className="">
+                      <tr className="">
+        <th>{index+1}</th>
+        <td>{item.recipe_name} </td>
+        <td>{item.preparing_time.slice(0,2)}</td>
+        <td>{item.calories.slice(0,3)}</td>
+       
+      </tr>
+      
+    </tbody>))}
+  </table>
+                </div>       
+                         
                         <div className='flex justify-end gap-6 text-[#282828CC] px-2'>
                             <div><p>Total Time =
                                 <br />{totalTime} minutes</p>
