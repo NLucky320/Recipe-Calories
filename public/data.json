@@ -11,7 +11,7 @@
   {
     "recipe_id": 2,
     "recipe_name": "Vegetable Pasta",
-    "recipe_image": "https://i.ibb.co/Bc0JPSb/pasta.png",
+    "recipe_image": "https://i.ibb.co/dksW4Y9/pasta.png",
     "short_description": "Delicious pasta dish packed with colorful vegetables.",
     "ingredients": ["300g pasta", "2 bell peppers", "Salt","1 zucchini", "1 onion", "200g cherry tomatoes"],
     "preparing_time": "25 minutes",
@@ -20,29 +20,30 @@
   {
     "recipe_id": 3,
     "recipe_name": "Grilled Salmon",
-    "recipe_image": "https://i.ibb.co/r3c550N/salmon.png",
+    "recipe_image": "https://i.ibb.co/6ttG7cr/salmon.png",
     "short_description": "Healthy grilled salmon seasoned with herbs.",
     "ingredients": ["4 salmon fillets", "2 tbsp olive oil", "1 lemon", "Salt and pepper"],
     "preparing_time": "20 minutes",
     "calories": "250 calories"
   },
+  
   {
     "recipe_id": 4,
-    "recipe_name": "Spinach Salad",
-    "recipe_image": "https://i.ibb.co/rwX6zyD/spinach.png",
-    "short_description": "Refreshing salad with spinach, strawberries, and balsamic dressing.",
-    "ingredients": ["200g spinach", "150g strawberries", "50g almonds", "Balsamic dressing"],
-    "preparing_time": "15 minutes",
-    "calories": "150 calories"
-  },
-  {
-    "recipe_id": 5,
     "recipe_name": "Mushroom Risotto",
     "recipe_image": "https://i.ibb.co/Cw2jVqq/mashroom.png",
     "short_description": "Creamy and savory mushroom risotto cooked to perfection.",
     "ingredients": ["300g Arborio rice", "500g mushrooms", "1 onion", "2 garlic cloves", "1L vegetable broth"],
     "preparing_time": "40 minutes",
     "calories": "380 calories"
+  },
+  {
+    "recipe_id": 5,
+    "recipe_name": "Spinach Salad",
+    "recipe_image": "https://i.ibb.co/SfGq4nH/spinach-1.png",
+    "short_description": "Refreshing salad with spinach, strawberries, and balsamic dressing.",
+    "ingredients": ["200g spinach", "150g strawberries", "50g almonds", "Balsamic dressing"],
+    "preparing_time": "15 minutes",
+    "calories": "150 calories"
   },
   {
     "recipe_id": 6,
