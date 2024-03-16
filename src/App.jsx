@@ -90,19 +90,26 @@ useEffect(() => {
                          <th></th>
       </tr>
     </thead>
-  
-                      {/* row 1 */}
-                       {cart.map((item,index) => (
-                    <tbody key={index} className="">
-                      <tr className="">
-        <th>{index+1}</th>
-        <td>{item.recipe_name} </td>
-        <td>{item.preparing_time}</td>
+  {cart.map((item, index) => (
+  <tbody key={index} className="text-[14px] md:text-[16px]">
+    <tr>
+      <th>{index + 1}</th>
+      <td>{item.recipe_name}</td>
+      <td>{item.preparing_time}</td>
         <td>{item.calories}</td>
-        <td>  <button className="btn bg-[#0BE58A] px-6 text-[#150B2B] border-none rounded-[50px] hover:bg-black hover:text-white" onClick={() => { handleDelete(item.recipe_id); handleCook(item) }}>Preparing</button></td>
+        <td className="hidden md:flex" >  <button className="btn bg-[#0BE58A] md:px-4 text-[#150B2B]  rounded-[50px] hover:bg-black hover:text-white border-none" onClick={() => { handleDelete(item.recipe_id); handleCook(item) }}>Preparing</button></td>
+    </tr>
+    {/* Render a separate row for the button on mobile devices */}
+    <tr className="md:hidden">
+      <td colSpan="5" className="text-center">
+        <button className="btn bg-[#0BE58A] px-12 text-[#150B2B] rounded-[50px] hover:bg-black hover:text-white border-none" onClick={() => { handleDelete(item.recipe_id); handleCook(item) }}>Preparing</button>
+        </td>
+       
       </tr>
-      
-    </tbody>))}
+       
+  </tbody>
+))}
+
   </table>
                 </div>
                 <div>
