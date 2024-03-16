@@ -24,11 +24,11 @@ const Recipes = ({ recipe, handleCart, handleCook }) => {
                                 <div className='flex justify-between '>
                                     <div className='flex justify-between gap-2'>
                                         <p><IoMdTime /></p>
-                            <p>{ recipe.preparing_time}</p>
+                            <p>{ recipe.preparing_time} minutes</p>
                                     </div>
                                     <div className='flex justify-between gap-2'>
                                         <p> <AiOutlineFire /></p>
-                                        <p>{recipe.calories} </p>
+                                        <p>{recipe.calories} calories</p>
                                     </div>
                                 </div>
                                <button className="btn bg-[#0BE58A] btn-primary text-[#150B2B] rounded-[50px] px-6 w-[170px]" onClick={()=>{handleCart(recipe)}}>Want to Cook</button>

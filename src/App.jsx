@@ -10,7 +10,7 @@ function App() {
 
   const [recipes, setRecipes] = useState([])
    const [cart, setCart]=useState([])
-  const [cook, setCook] = useState([])
+const [cookingItems, setCookingItems] = useState([]);
     const [wantToCook, setWantToCook] = useState(0);
 
 useEffect(() => {
@@ -44,7 +44,7 @@ useEffect(() => {
   }
 
    const handleCook= recipe => {
-      setCook([...cook, recipe])   
+   setCookingItems([...cookingItems, recipe]);  
 }
   return (
     <>
@@ -92,15 +92,15 @@ useEffect(() => {
                     <div key={index} className='flex justify-between gap-2 space-y-4 bg-[#28282808] p-4 items-center text-center'>
                       <p>{ index+1}</p>
                       <p>{item.recipe_name} </p>
-                      <p>{item.preparing_time} </p>
-                      <p>{item.calories} </p>
+                      <p>{item.preparing_time} min</p>
+                      <p>{item.calories} calories</p>
                       
-                      <button className="btn bg-[#0BE58A] text-[#150B2B] rounded-[50px] " onClick={() => { handleDelete(item.recipe_id); handleCook() }}>Preparing</button>
+                      <button className="btn bg-[#0BE58A] text-[#150B2B] rounded-[50px] " onClick={() => { handleDelete(item.recipe_id); handleCook(item) }}>Preparing</button>
                     </div>
                   ))}
                             
                         </div>
-                         <h2 className='text-[24px] font-semibold text-[#282828] border-b-2 border-[#28282826]'>Currently cooking: <span>01</span></h2>
+                         <h2 className='text-[24px] font-semibold text-[#282828] border-b-2 border-[#28282826]'> Currently cooking: {cookingItems.length}</h2>
                         <div className='flex justify-between'>
                             <div>
                                 
@@ -116,21 +116,24 @@ useEffect(() => {
                             </div>
                            
                         </div>
-                        <div className='flex justify-between gap-1 bg-[#28282808] p-4'>
-                            <div>
-                               <p>1</p>
-                            </div>
-                            <div>
-                                <p>chicken</p>
-                            </div>
-                            <div>
-                                <p>40</p>
-                            </div>
-                            <div>
-                                <p>400</p>
-                            </div>
-                            
-                        </div>
+                         <div className=''>
+                  {cookingItems.map((item, index) => (
+                    <div key={index} className='flex justify-between gap-1 bg-[#28282808] p-4'>
+                      <div>
+                        <p>{index + 1}</p>
+                      </div>
+                      <div>
+                        <p>{item.recipe_name}</p>
+                      </div>
+                      <div>
+                        <p>{item.preparing_time}</p>
+                      </div>
+                      <div>
+                        <p>{item.calories}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
                         <div className='flex justify-end gap-6'>
                             <div><p>Total Time =
                                 <br /><span>0</span> minutes</p>
