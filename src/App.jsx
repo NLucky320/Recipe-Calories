@@ -76,7 +76,7 @@ useEffect(() => {
             <div className="">
                <div className="lg:w-[450px] py-4 card bg-[#FFF] shadow-xl border border-solid border-[#28282833C]">
                 <h2 className='text-[24px] font-semibold text-[#282828] border-b-2 border-[#28282826]'>Want to cook: {cart.length}</h2>
-   <div className="text-[#878787] px-16 pb-4" ><hr  /></div>
+   <div className="text-[#878787] px-16 pb-4 -mt-4" ><hr  /></div>
 
 <div className="overflow-hidden">
   <table className="table text-[#878787] bg-[#28282808] ">
@@ -116,7 +116,7 @@ useEffect(() => {
                      
                          <h2 className='text-[24px] font-semibold text-[#282828] border-b-2 border-[#28282826]'> Currently cooking: {cookingItems.length}</h2>
                 </div>
-                   <div className="text-[#878787] px-16 pb-4" ><hr  /></div>
+                   <div className="text-[#878787] px-16 pb-4 -mt-4" ><hr  /></div>
                 <div className="overflow-hidden">
   <table className="table text-[#878787] bg-[#28282808] ">
     {/* head */}
