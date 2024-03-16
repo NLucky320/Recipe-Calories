@@ -30,7 +30,7 @@ const Navbar = () => {
  
   </div>
   <div className="navbar-end flex gap-2">
-           <div className="search-bar w-[100px] md:w-[200px] rounded-[50px] bg-[#150B2B0D] p-4 px-6">
+           <div className="search-bar hidden md:flex md:w-[200px] rounded-[50px] bg-[#150B2B0D] p-4 px-6">
       <div className=" flex items-center text-center justify-center gap-2 text-[#150B2BB2]">
              <div>   <FaSearch /></div>
                <div> <input type="text" className='border-none bg-transparent' placeholder="Search" /></div>
@@ -40,8 +40,8 @@ const Navbar = () => {
     
     <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img alt="Tailwind CSS Navbar component" src={profile} />
+        <div className="w-10 rounded-full bg-[#0BE58A] p-2">
+          <img className='text-[#150B2B]' alt="Tailwind CSS Navbar component" src={profile} />
         </div>
       </div>
     </div>

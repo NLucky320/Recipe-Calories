@@ -1,11 +1,11 @@
-import React from 'react';
+
 import { IoMdTime } from "react-icons/io";
 import { AiOutlineFire } from "react-icons/ai";
 
-const Recipes = ({ recipe, handleCart, handleCook }) => {
+const Recipes = ({ recipe, handleCart }) => {
     // console.log(recipe)
     return (   
-                <div className='h-full lg:w-[300px] xl:w-[350px]'>
+                <div className='h-full border-2 border-[#282828CC]'>
                     
                         <div className="card bg-[#FFF] shadow-xl text-left h-full">
                             <figure className="">
@@ -24,11 +24,11 @@ const Recipes = ({ recipe, handleCart, handleCook }) => {
                                 <div className='flex justify-between '>
                                     <div className='flex justify-between gap-2'>
                                         <p><IoMdTime /></p>
-                            <p>{ recipe.preparing_time} minutes</p>
+                            <p>{ recipe.preparing_time}</p>
                                     </div>
                                     <div className='flex justify-between gap-2'>
                                         <p> <AiOutlineFire /></p>
-                                        <p>{recipe.calories} calories</p>
+                                        <p>{recipe.calories} </p>
                                     </div>
                                 </div>
                                <button className="btn bg-[#0BE58A] btn-primary text-[#150B2B] rounded-[50px] px-6 w-[170px]" onClick={()=>{handleCart(recipe)}}>Want to Cook</button>
