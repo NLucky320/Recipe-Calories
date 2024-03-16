@@ -16,7 +16,7 @@ function App() {
 
 
 useEffect(() => {
-  fetch('../public/data.json')
+  fetch('/data.json')
     .then(res => res.json())
   .then(data=>setRecipes(data))
 }, [])
@@ -45,16 +45,12 @@ useEffect(() => {
   }
 
   const handleCook = recipe => {
-    const isExist = cookingItems.find(item => item.recipe_id == recipe.recipe_id);
-    if (!isExist) {
+   
       setCookingItems([...cookingItems, recipe]);
     // Update total time and total calories
     setTotalTime(prevTime => prevTime + parseInt(recipe.preparing_time));
     setTotalCalories(prevCalories => prevCalories + parseInt(recipe.calories));
-    }
-     else{
-     toast("already added!")
-    }
+   
   }
   return (
     <>
@@ -77,13 +73,13 @@ useEffect(() => {
      
      
     </div>
-            <div className="lg:w-1/2">
-               <div className="py-4 card bg-[#FFF] shadow-xl border border-solid border-[#28282833C]">
+            <div className="">
+               <div className="lg:w-[450px] py-4 card bg-[#FFF] shadow-xl border border-solid border-[#28282833C]">
                 <h2 className='text-[24px] font-semibold text-[#282828] border-b-2 border-[#28282826]'>Want to cook: {cart.length}</h2>
-
+   <div className="text-[#878787] px-6" ><hr  /></div>
 
 <div className="overflow-hidden">
-  <table className="table">
+  <table className="table text-[#878787] bg-[#28282808] ">
     {/* head */}
     <thead>
       <tr>
@@ -110,14 +106,15 @@ useEffect(() => {
   </table>
                 </div>
                 <div>
-                  
+                     
                          <h2 className='text-[24px] font-semibold text-[#282828] border-b-2 border-[#28282826]'> Currently cooking: {cookingItems.length}</h2>
-</div>
+                </div>
+                   <div className="text-[#878787] px-6" ><hr  /></div>
                 <div className="overflow-hidden">
-  <table className="table">
+  <table className="table text-[#878787] bg-[#28282808] ">
     {/* head */}
-    <thead>
-      <tr>
+    <thead className="">
+      <tr className="">
         <th></th>
         <th>Name</th>
         <th>Time</th>
@@ -128,19 +125,21 @@ useEffect(() => {
   
                       {/* row 1 */}
                        {cookingItems.map((item,index) => (
-                    <tbody key={index} className="">
-                      <tr className="">
+                    <tbody key={index} >
+                        
+                                   <tr className="">
         <th>{index+1}</th>
         <td>{item.recipe_name} </td>
         <td>{item.preparing_time.slice(0,2)}</td>
         <td>{item.calories.slice(0,3)}</td>
        
       </tr>
+               
       
     </tbody>))}
   </table>
                 </div>       
-                         
+                            
                         <div className='flex justify-end gap-6 text-[#282828CC] px-2'>
                             <div><p>Total Time =
                                 <br />{totalTime} minutes</p>

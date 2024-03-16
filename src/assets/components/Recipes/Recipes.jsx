@@ -5,7 +5,7 @@ import { AiOutlineFire } from "react-icons/ai";
 const Recipes = ({ recipe, handleCart }) => {
     // console.log(recipe)
     return (   
-                <div className='h-full border-2 border-[#282828CC]'>
+                <div className=' h-full border-2 border-[#282828CC]'>
                     
                         <div className="card bg-[#FFF]  border border-solid border-[#878787] text-left h-full">
                
@@ -16,15 +16,17 @@ const Recipes = ({ recipe, handleCart }) => {
                           
                          </div>
                                 <h3>{recipe.recipe_name} </h3>
-                    <p>{ recipe.short_description}</p>
+                    <p className="text-[#878787]">{recipe.short_description}</p>
+                    <div className="text-[#878787]" ><hr  /></div>
+                 
                     <h3>Ingredients: { recipe.ingredients.length}</h3>
-                    <ul>
+                    <ul className="text-[#878787]">
                          {recipe.ingredients.map((ingredient, index) => (
                   <li key={index}>{ingredient}</li>
                 ))}
                                 </ul>
-                            
-                                <div className='flex justify-between '>
+                               <div className="text-[#878787]" ><hr  /></div>
+                                <div className='flex justify-between text-[#282828CC]'>
                                     <div className='flex justify-between gap-2'>
                                         <p><IoMdTime /></p>
                             <p>{ recipe.preparing_time}</p>
