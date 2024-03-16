@@ -2,9 +2,8 @@ import { useEffect, useState } from "react"
 import Banner from "./assets/components/Banner/Banner"
 import Navbar from "./assets/components/Navbar/Navbar"
 import Recipes from "./assets/components/Recipes/Recipes"
-import { ToastContainer } from 'react-toastify';
-
-import { toast } from 'react-toastify';
+ import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -32,7 +31,7 @@ useEffect(() => {
         setWantToCook(prevCount => prevCount + 1);
     }
     else{
-      alert('already added')
+     toast("already added!")
     }
     
  }
@@ -62,7 +61,7 @@ useEffect(() => {
             recipes.map(recipe => <Recipes key={recipe.id} recipe={recipe} handleCart={handleCart}></Recipes>)
             
           }
-          
+           <ToastContainer />
             </div>
             <div>
      
