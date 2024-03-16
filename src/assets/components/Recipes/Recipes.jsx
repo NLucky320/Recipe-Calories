@@ -7,7 +7,7 @@ const Recipes = ({ recipe, handleCart }) => {
     return (   
                 <div className='h-full border-2 border-[#282828CC]'>
                     
-                        <div className="card bg-[#FFF] shadow-xl text-left h-full">
+                        <div className="card bg-[#FFF]  border border-solid border-[#878787] text-left h-full">
                             <figure className="">
                                 <img src={ recipe.recipe_image} alt="food" className="rounded-xl object-cover w-full h-full" />
                             </figure>
