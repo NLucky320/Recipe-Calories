@@ -10,8 +10,12 @@ function App() {
 
   const [recipes, setRecipes] = useState([])
    const [cart, setCart]=useState([])
-const [cookingItems, setCookingItems] = useState([]);
-    const [wantToCook, setWantToCook] = useState(0);
+   const [cookingItems, setCookingItems] = useState([]);
+  const [wantToCook, setWantToCook] = useState(0);
+   const [currentlyCookingCount, setCurrentlyCookingCount] = useState(0);
+  const [totalTime, setTotalTime] = useState(0);
+  const [totalCalories, setTotalCalories] = useState(0);
+
 
 useEffect(() => {
   fetch('../public/data.json')
@@ -43,9 +47,13 @@ useEffect(() => {
     setCart(newCart)
   }
 
-   const handleCook= recipe => {
-   setCookingItems([...cookingItems, recipe]);  
-}
+  const handleCook = recipe => {
+    setCookingItems([...cookingItems, recipe]);
+    setCurrentlyCookingCount(prevCount => prevCount + 1);
+    // Update total time and total calories
+    setTotalTime(prevTime => prevTime + parseInt(recipe.preparing_time));
+    setTotalCalories(prevCalories => prevCalories + parseInt(recipe.calories));
+  }
   return (
     <>
      
@@ -136,12 +144,12 @@ useEffect(() => {
                 </div>
                         <div className='flex justify-end gap-6'>
                             <div><p>Total Time =
-                                <br /><span>0</span> minutes</p>
+                                <br />{totalTime} minutes</p>
                             </div>
                             <div>
                                 <p>
                                     Total Calories =
-                                    <br /><span>0</span> calories</p>
+                                    <br />{totalCalories} calories</p>
                             </div>
                         </div>
                   </div>
