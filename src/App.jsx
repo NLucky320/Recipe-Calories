@@ -11,8 +11,6 @@ function App() {
   const [recipes, setRecipes] = useState([])
    const [cart, setCart]=useState([])
    const [cookingItems, setCookingItems] = useState([]);
-  const [wantToCook, setWantToCook] = useState(0);
-   const [currentlyCookingCount, setCurrentlyCookingCount] = useState(0);
   const [totalTime, setTotalTime] = useState(0);
   const [totalCalories, setTotalCalories] = useState(0);
 
@@ -32,7 +30,6 @@ useEffect(() => {
     
      if (!isAdded) {
        setCart([...cart, recipe]);
-        setWantToCook(prevCount => prevCount + 1);
     }
     else{
      toast("already added!")
@@ -49,7 +46,6 @@ useEffect(() => {
 
   const handleCook = recipe => {
     setCookingItems([...cookingItems, recipe]);
-    setCurrentlyCookingCount(prevCount => prevCount + 1);
     // Update total time and total calories
     setTotalTime(prevTime => prevTime + parseInt(recipe.preparing_time));
     setTotalCalories(prevCalories => prevCalories + parseInt(recipe.calories));
@@ -76,7 +72,7 @@ useEffect(() => {
      
     </div>
           <div className="card bg-base-100 shadow-xl p-4 lg:w-[400px] xl:w-[500px]">
-                        <h2 className='text-[24px] font-semibold text-[#282828] border-b-2 border-[#28282826]'>Want to cook: {wantToCook}</h2>
+                        <h2 className='text-[24px] font-semibold text-[#282828] border-b-2 border-[#28282826]'>Want to cook: {cart.length}</h2>
                         <div className='flex justify-between'>
                             <div>
                                 
