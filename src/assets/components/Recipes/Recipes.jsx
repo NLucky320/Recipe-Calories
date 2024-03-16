@@ -36,7 +36,7 @@ const Recipes = ({ recipe, handleCart }) => {
                                         <p>{recipe.calories} </p>
                                     </div>
                                 </div>
-                               <button className="btn bg-[#0BE58A] btn-primary text-[#150B2B] rounded-[50px] px-6 w-[170px]" onClick={()=>{handleCart(recipe)}}>Want to Cook</button>
+                               <button className="btn bg-[#0BE58A] btn-primary text-[#150B2B] rounded-[50px]  w-[170px] hover:bg-black hover:text-white border-none" onClick={()=>{handleCart(recipe)}}>Want to Cook</button>
                             </div>
                         </div>
                     </div>      

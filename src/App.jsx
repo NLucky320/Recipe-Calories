@@ -99,7 +99,7 @@ useEffect(() => {
         <td>{item.recipe_name} </td>
         <td>{item.preparing_time}</td>
         <td>{item.calories}</td>
-        <td>  <button className="btn bg-[#0BE58A] text-[#150B2B] rounded-[50px] " onClick={() => { handleDelete(item.recipe_id); handleCook(item) }}>Preparing</button></td>
+        <td>  <button className="btn bg-[#0BE58A] px-6 text-[#150B2B] border-none rounded-[50px] hover:bg-black hover:text-white" onClick={() => { handleDelete(item.recipe_id); handleCook(item) }}>Preparing</button></td>
       </tr>
       
     </tbody>))}
