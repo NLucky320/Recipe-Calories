@@ -78,9 +78,9 @@ useEffect(() => {
      
     </div>
             <div className="lg:w-2/5">
-               <div className="p-4 card bg-[#FFF] shadow-xl border border-solid border-[#28282833C]">
+               <div className="py-4 card bg-[#FFF] shadow-xl border border-solid border-[#28282833C]">
                 <h2 className='text-[24px] font-semibold text-[#282828] border-b-2 border-[#28282826]'>Want to cook: {cart.length}</h2>
-                                    <div className='flex justify-between gap-4'>
+                                    <div className='flex justify-between gap-4 px-2'>
                             <div>
                                 
                             </div>
@@ -100,8 +100,8 @@ useEffect(() => {
                         <div className=''>
                              {
                   cart.map((item,index) => (
-                    <div key={index} className='flex justify-between gap-2 space-y-4 bg-[#28282808] p-2 items-center text-center'>
-                      <p>{ index+1}</p>
+                    <div key={index} className='flex justify-between gap-2 space-y-2 bg-[#28282808] p-2 items-center text-center'>
+                      <p>{index+1}</p>
                       <p>{item.recipe_name} </p>
                       <p>{item.preparing_time}</p>
                       <p>{item.calories}</p>
@@ -112,7 +112,7 @@ useEffect(() => {
                             
                         </div>
                          <h2 className='text-[24px] font-semibold text-[#282828] border-b-2 border-[#28282826]'> Currently cooking: {cookingItems.length}</h2>
-                        <div className='flex justify-between border border-black'>
+                        <div className='flex justify-between border border-black px-2'>
                             <div>
                                 
                             </div>
@@ -145,7 +145,7 @@ useEffect(() => {
                     </div>
                   ))}
                 </div>
-                        <div className='flex justify-end gap-6 text-[#282828CC]'>
+                        <div className='flex justify-end gap-6 text-[#282828CC] px-2'>
                             <div><p>Total Time =
                                 <br />{totalTime} minutes</p>
                             </div>

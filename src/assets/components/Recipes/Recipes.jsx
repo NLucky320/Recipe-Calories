@@ -8,10 +8,13 @@ const Recipes = ({ recipe, handleCart }) => {
                 <div className='h-full border-2 border-[#282828CC]'>
                     
                         <div className="card bg-[#FFF]  border border-solid border-[#878787] text-left h-full">
-                            <figure className="">
+               
+                <div className="p-4 ">
+                    <div className="w-full ">
+                       
                                 <img src={ recipe.recipe_image} alt="food" className="rounded-xl object-cover w-full h-full" />
-                            </figure>
-                            <div className="card-body ">
+                          
+                         </div>
                                 <h3>{recipe.recipe_name} </h3>
                     <p>{ recipe.short_description}</p>
                     <h3>Ingredients: { recipe.ingredients.length}</h3>
