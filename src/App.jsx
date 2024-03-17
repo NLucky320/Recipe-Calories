@@ -79,10 +79,10 @@ useEffect(() => {
    <div className="text-[#878787] px-16 pb-4 -mt-4" ><hr  /></div>
 
 <div className="overflow-hidden">
-  <table className="table text-[#878787] bg-[#28282808] ">
+  <table className="table text-[#878787] bg-[#28282808] border-collapse">
     {/* head */}
     <thead>
-      <tr>
+      <tr className="bg-white">
         <th></th>
         <th>Name</th>
         <th>Time</th>
@@ -118,10 +118,10 @@ useEffect(() => {
                 </div>
                    <div className="text-[#878787] px-16 pb-4 -mt-4" ><hr  /></div>
                 <div className="overflow-hidden">
-  <table className="table text-[#878787] bg-[#28282808] ">
+  <table className="table text-[#878787] bg-[#28282808] border-collapse">
     {/* head */}
     <thead className="">
-      <tr className="">
+      <tr className="bg-white">
         <th></th>
         <th>Name</th>
         <th>Time</th>
